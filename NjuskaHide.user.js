@@ -25,9 +25,9 @@ function getHiddenAds () {
 }
 
 function updateAdCount (offset) {
-    var count = parseInt($('.entities-count').text());
+    var count = parseInt($('.entity-list-header .entities-count').text());
     count -= offset;
-    $('.entities-count').text(count);
+    $('.entity-list-header .entities-count').text(count);
 }
 
 $('.EntityList-item').each(function () {
@@ -54,7 +54,7 @@ $('.Jankovic--tool--hideAd').click(function () {
     if(arr.indexOf(id) === -1) {
         arr.push(id);
         $(this).closest('.EntityList-item').remove();
-        updateCount(1);
+        updateAdCount(1);
     } else {
         alert('Greška! Oglas bi već trebao biti sakriven. Molim kontaktiraj me na aaio@outlook.com');
     }
